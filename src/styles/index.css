@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Tokens de design. Cores em "R G B" para o Tailwind aplicar opacidade. */
+:root {
+  --bg: 246 247 246;
+  --surface: 255 255 255;
+  --line: 224 228 226;
+  --ink: 22 30 28;
+  --muted: 100 112 108;
+  --brand: 15 118 110;      /* cor principal (verde-petróleo), personalizável */
+  --brand-ink: 255 255 255;
+}
+:root[data-theme='dark'] {
+  --bg: 15 20 19;
+  --surface: 22 30 28;
+  --line: 44 56 53;
+  --ink: 232 238 236;
+  --muted: 148 163 158;
+  --brand: 45 190 174;
+  --brand-ink: 6 20 18;
+}
+
+body { @apply bg-bg text-ink font-sans antialiased; }
+:focus-visible { outline: 2px solid rgb(var(--brand)); outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
